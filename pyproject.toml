@@ -17,14 +17,12 @@ djangorestframework = "3.15.2"
 djangorestframework-simplejwt = "5.3.1"
 django-filter = "24.3"
 requests = "2.32.3"
-gunicorn = "21.2.0"
-redis = "5.2.0"
-celery = "5.4.0"
 django-cors-headers = "4.6.0"
 coreapi = "2.3.3"
 pyyaml = "6.0.2"
 djoser = "2.3.1"
 drf-yasg = "1.21.8"
+coverage = "^7.6.10"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -93,5 +91,8 @@ include_trailing_comma = true
 force_grid_wrap = 0
 use_parentheses = true
 known_local_folder = [
+    "api",
+    "vps",
     "vps_manager",
+    "users",
 ]

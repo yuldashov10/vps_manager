@@ -104,7 +104,11 @@ STATIC_ROOT = BASE_DIR / "static/"
 
 CORS_ALLOWED_ORIGINS: list[str] = config("CORS_ALLOWED_ORIGINS", cast=Csv())
 CSRF_TRUSTED_ORIGINS: list[str] = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
-CORS_ALLOW_ALL_ORIGINS: bool = config("CORS_ALLOW_ALL_ORIGINS", cast=bool)
+CORS_ALLOW_ALL_ORIGINS: bool = config(
+    "CORS_ALLOW_ALL_ORIGINS",
+    default=False,
+    cast=bool,
+)
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "users.User"
