@@ -35,3 +35,5 @@ class UserManager(BaseUserManager):
         )
         for field in superuser_required_fields:
             extra_fields.setdefault(field, True)
+
+        return self.create_user(email, password, **extra_fields)

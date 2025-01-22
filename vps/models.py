@@ -1,3 +1,5 @@
+import uuid
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
@@ -13,15 +15,16 @@ from vps.constants import (
 
 
 class StatusVPS(models.TextChoices):
-    STARTED = ("start", "Started")
-    BLOCKED = ("block", "Blocked")
-    STOPPED = ("stop", "Stopped")
+    STARTED = ("started", "Started")
+    BLOCKED = ("blocked", "Blocked")
+    STOPPED = ("stopped", "Stopped")
 
 
 class VPS(models.Model):
     uid = models.UUIDField(
         "ID сервера",
         primary_key=True,
+        default=uuid.uuid4,
         editable=False,
     )
     cpu = models.PositiveSmallIntegerField(
